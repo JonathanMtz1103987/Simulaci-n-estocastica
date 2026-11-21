@@ -4,13 +4,13 @@ Tarea 2 de Simulación Estocástica. Maestría en Estadística Aplicada, Faculta
 
 ## Objetivo
 
-Estimar la venta neta diaria esperada de la refaccionaria, su incertidumbre y la probabilidad de superar 50,000 MXN mediante Monte Carlo vía cadenas de Markov. El importe de 50,000 es un escenario ilustrativo del ejercicio.
+Estimar la venta neta diaria esperada de la refaccionaria, su incertidumbre y la probabilidad de superar 50,000 MXN mediante Monte Carlo vía cadenas de Markov. El importe de 50,000 es ilustrativo del ejercicio.
 
 ## Datos y variable
 
-La variable es el importe neto vendido por día, en MXN, para días con movimientos registrados. Se utiliza el CSV proporcionado por el estudiante, exportado desde una base depurada de SICAR con la exclusión acordada de 12 notas de crédito.
+La variable es el importe neto vendido por día, en pesos mexicanos, para días con movimientos registrados. Se utiliza la base de datos exportada desde una base depurada de SICAR con la exclusión acordada de 12 notas de crédito.
 
-El archivo abarca del 25 de septiembre de 2021 al 25 de septiembre de 2026. El modelo se ajusta con los 310 días registrados de septiembre de 2025 a agosto de 2026. Se conservan los tres saldos negativos de ese periodo. Las 55 fechas sin registros se mantienen identificadas en el CSV. La inferencia se refiere a días con movimientos.
+El archivo abarca del 25 de septiembre de 2021 al 25 de septiembre de 2026. El modelo se ajusta con los 310 días registrados de septiembre de 2025 a agosto de 2026. Se conservan los tres saldos negativos de ese periodo. Las 55 fechas sin registros se mantienen identificadas en la base de datos. La inferencia se refiere a días con movimientos.
 
 Las 22 fechas observadas del 1 al 25 de septiembre de 2026 se reservan para evaluación temporal.
 
@@ -26,25 +26,10 @@ Se utilizan cuatro cadenas, 20,000 iteraciones por cadena y 4,000 iteraciones de
 |---|---|
 | [Tarea_2_MCMC_Ventas_diarias.ipynb](Tarea_2_MCMC_Ventas_diarias.ipynb) | Notebook ejecutado y documentado, con los apartados 0–12, tablas y siete figuras interpretadas. |
 | [Ventas_diarias_para_MCMC.csv](Ventas_diarias_para_MCMC.csv) | Fechas, ventas netas y número de movimientos. |
-| README.md | Objetivo, método e instrucciones de ejecución y entrega. |
+| README.md | Objetivo, método e instrucciones.|
 
-## Ejecución en Google Colab
-
-1. Abre [Google Colab](https://colab.research.google.com/) y selecciona **Archivo → Subir cuaderno**. Carga `Tarea_2_MCMC_Ventas_diarias.ipynb`.
-2. Selecciona **Entorno de ejecución → Ejecutar todas**. La segunda celda pedirá el archivo `Ventas_diarias_para_MCMC.csv` si todavía falta en el entorno.
-3. Carga el CSV incluido en el paquete y deja terminar las celdas. Un entorno de CPU es suficiente. Las versiones de NumPy, pandas, SciPy, Matplotlib y ArviZ aparecen en la primera salida.
-4. Guarda el cuaderno con sus salidas mediante **Archivo → Descargar → Descargar .ipynb**.
-
-El notebook también puede ejecutarse en Jupyter con el CSV en el mismo directorio. Requiere Python 3 y las librerías descritas en su primera sección. Las salidas incluidas proceden de una ejecución completa en Python 3.12.
-
-## Entrega en GitHub
-
-Crea un repositorio y carga los tres archivos de esta tabla en su directorio principal. Comprueba que la vista del notebook muestre las tablas y las siete figuras, y que los permisos permitan al docente revisar el repositorio. En Canvas entrega únicamente la URL del repositorio.
 
 ## Alcance
 
-Las cantidades monetarias son nominales y la simulación está condicionada al calendario de días registrados. El notebook documenta la amplitud de los intervalos, los límites del modelo simétrico Student y el desempeño frente a una referencia por día de semana. La publicación del repositorio es el paso de entrega externa pendiente.
+Las cantidades monetarias son nominales y la simulación está condicionada al calendario de días registrados. El notebook documenta la amplitud de los intervalos, los límites del modelo simétrico Student y el desempeño frente a una referencia por día de semana.
 
-## Referencias
-
-La bibliografía completa figura en el apartado 11 del notebook. El desarrollo sigue el módulo 7 de Simulación Estocástica de G. Quiñónez-Barraza (UJED, 2026), el algoritmo de Hastings (1970) y los diagnósticos de Vehtari y colaboradores (2021), implementados mediante ArviZ.
